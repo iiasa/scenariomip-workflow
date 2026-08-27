@@ -17,9 +17,10 @@ definitions:
         - hierarchy: COFFEE 1.6
         - hierarchy: GCAM 8s
         - hierarchy: IMAGE 3.4
-        - hierarchy: MESSAGEix-GLOBIOM-GAINS 2.1-M-R12
+        - hierarchy: MESSAGEix-GLOBIOM-GAINS 2.1-R12
         - hierarchy: REMIND-MAgPIE 3.5-4.11
         - hierarchy: WITCH 6.0
+    country: true
 mappings:
   repository:
     name: common-definitions
