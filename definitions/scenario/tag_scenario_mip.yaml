@@ -1,0 +1,13 @@
+- Emissions:
+    - High Emissions:
+        definition: "'High Emissions' (H)"
+    - Medium Emissions:
+        definition: "'Medium Emissions' (M)"
+    - Medium-Low Emissions:
+        definition: "'Medium-Low Emissions' (ML)"
+    - Low Emissions:
+        definition: "'Low Emissions' (L)"
+    - Very Low Emissions:
+        definition: "'Very Low Emissions' (LN)"
+    - Low Overshoot:
+        definition: "'Low Overshoot' (VL)"
