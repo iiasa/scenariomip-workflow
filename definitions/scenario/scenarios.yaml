@@ -1,2 +1,5 @@
-- "{SSP} - {Emissions}":
-    description: Pathway {SSP} combined with {Emissions} from the ScenarioMIP protocol
+- "{Emissions} - {SSP}":
+    description: Implementation of the {Emissions} emissions scenario from the ScenarioMIP protocol
+      based on the {SSP} pathway
+- "{Emissions} - {SSP} (Marker)":
+    description: Marker implementation of the {Emissions} emissions scenario from the ScenarioMIP protocol based on the {SSP} pathway
