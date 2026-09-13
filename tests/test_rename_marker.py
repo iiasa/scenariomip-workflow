@@ -1,21 +1,11 @@
-import importlib
-import sys
 from pathlib import Path
 
 import pandas.testing as pdt
 import pytest
+from nomenclature.core import run_workflow
 from pyam import IamDataFrame
 
-workflow_file = Path(__file__).parents[1] / "workflow.py"
-module_name = workflow_file.stem
-spec = importlib.util.spec_from_file_location(module_name, workflow_file)
-if spec is None or spec.loader is None:
-    raise ImportError(f"Cannot load workflow module from {workflow_file}")
-workflow = importlib.util.module_from_spec(spec)
-sys.modules[module_name] = workflow
-spec.loader.exec_module(workflow)
-
-
+WORKLOW_FILE = Path(__file__).parents[1] / "workflow.py"
 TEST_DATA_DIR = Path(__file__).parent / "data"
 
 
@@ -23,14 +13,14 @@ def test_rename_marker_fails():
     match = "Do not submit scenarios with 'Marker' tag, found:"
     with pytest.raises(ValueError, match=match):
         df = IamDataFrame(TEST_DATA_DIR / "expected_scenario_ensemble.csv")
-        workflow.submission(df)
+        run_workflow(df, WORKLOW_FILE, "submission")
 
 
 def test_rename_marker():
 
     df = IamDataFrame(TEST_DATA_DIR / "input_scenario_ensemble.csv")
     exp = IamDataFrame(TEST_DATA_DIR / "expected_scenario_ensemble.csv")
-    obs = workflow.submission(df)
+    obs = run_workflow(df, WORKLOW_FILE, "submission")
 
     # assert that renaming worked as expected
     pdt.assert_frame_equal(exp.data, obs.data)
