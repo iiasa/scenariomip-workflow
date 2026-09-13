@@ -1,11 +1,10 @@
 import importlib
-from pathlib import Path
 import sys
+from pathlib import Path
 
-import pytest
 import pandas.testing as pdt
+import pytest
 from pyam import IamDataFrame
-
 
 workflow_file = Path(__file__).parents[1] / "workflow.py"
 module_name = workflow_file.stem

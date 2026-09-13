@@ -1,7 +1,6 @@
 from pathlib import Path
 
 import pandas as pd
-
 import pyam
 from nomenclature import DataStructureDefinition, RegionProcessor, process
 
